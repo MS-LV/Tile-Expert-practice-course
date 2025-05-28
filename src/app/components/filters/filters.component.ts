@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
   ],
   templateUrl: './filters.component.html',
-  styleUrl: './filters.component.scss'
+  styleUrl: './filters.component.scss',
 })
 export class FiltersComponent {
   isSearchActive = input<Boolean>();
