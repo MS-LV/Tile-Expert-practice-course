@@ -6,23 +6,7 @@
         <div class="header_logo">TILE.EXPERT</div>
         <div class="header_area">
             <app-filters [isSearchActive]="isSearchActive"></app-filters>
-            <div class="mobile-menu" [class.open]="isMobileMenuOpen" (mouseleave)="toggleMenuBurger(false)">
-                <a mat-button (click)="toggleMenuBurger()">
-                    <mat-icon>link</mat-icon> Ссылки
-                </a>
-                <a mat-button (click)="toggleMenuBurger()">
-                    <mat-icon>person</mat-icon> Контакты
-                </a>
-                <a mat-button (click)="toggleMenuBurger()">
-                    <mat-icon>assistant</mat-icon> Теги
-                </a>
-                <a mat-button (click)="toggleMenuBurger()">
-                    <mat-icon>star_border</mat-icon> Избранное
-                </a>
-                <a mat-button (click)="toggleMenuBurger()">
-                    <mat-icon>history</mat-icon> Поощрения
-                </a>
-            </div>
+            <app-mobile-menu [isOpen]="isMobileMenuOpen" (closed)="toggleMenuBurger(false)"></app-mobile-menu>
 
             <!-- Десктопная навигация -->
             <div class="header_navigation header_navigation__hide">

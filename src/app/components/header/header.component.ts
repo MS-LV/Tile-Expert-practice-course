@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { FiltersComponent } from "../filters/filters.component";
+import { MobileMenuComponent } from "../mobile-menu/mobile-menu.component";
 
 
 @Component({
@@ -13,13 +14,13 @@ import { FiltersComponent } from "../filters/filters.component";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   imports: [
-    FormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
     MatMenuModule,
-    FiltersComponent
+    FiltersComponent,
+    MobileMenuComponent
   ]
 })
 export class HeaderComponent {
@@ -29,7 +30,6 @@ export class HeaderComponent {
   toggleMenuBurger(isOpen: boolean = false) {
     this.isMobileMenuOpen = isOpen;
     this.isSearchActive = false
-    console.log('isOpen', this.isMobileMenuOpen);
   }
   toggleFilter(isOpen: boolean = false) {
     this.isSearchActive = isOpen;
