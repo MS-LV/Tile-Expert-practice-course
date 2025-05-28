@@ -5,35 +5,7 @@
         </button>
         <div class="header_logo">TILE.EXPERT</div>
         <div class="header_area">
-            @if (isSearchActive) {
-            <div class="header_filters">
-                <div class="header_history hide-on-mobile">
-                    <p class="section-title">История</p>
-                    <ul>
-                        @for (item of historyItems; track $index) {
-                        <li>{{item}}</li>
-                        }
-                    </ul>
-                </div>
-
-                <div class="header_filter">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Автор</mat-label>
-                        <input matInput placeholder="Имя или должность" />
-                        <button mat-button matSuffix>Я</button>
-                    </mat-form-field>
-
-                    <mat-checkbox>Я участник</mat-checkbox>
-                    <mat-checkbox>Строгий поиск</mat-checkbox>
-                    <mat-checkbox>В заголовках</mat-checkbox>
-
-                    <p>Только</p>
-                    <mat-checkbox>Теги</mat-checkbox>
-                    <mat-checkbox>Просьбы</mat-checkbox>
-                    <mat-checkbox>Контакты</mat-checkbox>
-                </div>
-            </div>
-            }
+            <app-filters [isSearchActive]="isSearchActive"></app-filters>
             <div class="mobile-menu" [class.open]="isMobileMenuOpen" (mouseleave)="toggleMenuBurger(false)">
                 <a mat-button (click)="toggleMenuBurger()">
                     <mat-icon>link</mat-icon> Ссылки
