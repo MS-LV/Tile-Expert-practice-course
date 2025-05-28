@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "gh-build": "ng build --configuration=production --base-href=/Tile-Expert/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:new-app": "node dist/new-app/server/server.mjs"
