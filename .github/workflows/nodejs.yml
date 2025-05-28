@@ -40,7 +40,7 @@ jobs:
       with:
         # branch: gh-pages # by default
         ssh-key: ${{ secrets.DEPLOY_KEY_SECRET }}
-        folder: dist/Tile-Expert/browser
+        folder: dist/Tile-Expert/
         branch: gh-pages
 
         
