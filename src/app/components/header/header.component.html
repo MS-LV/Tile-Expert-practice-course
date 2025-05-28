@@ -1,0 +1,89 @@
+<mat-toolbar color="primary" class="header">
+    <div class="header_content">
+        <button class="header_burger show-on-mobile" (click)="toggleMenuBurger(!isMobileMenuOpen)" mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="header_logo">TILE.EXPERT</div>
+        <div class="header_area">
+            @if (isSearchActive) {
+            <div class="header_filters">
+                <div class="header_history hide-on-mobile">
+                    <p class="section-title">История</p>
+                    <ul>
+                        @for (item of historyItems; track $index) {
+                        <li>{{item}}</li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="header_filter">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Автор</mat-label>
+                        <input matInput placeholder="Имя или должность" />
+                        <button mat-button matSuffix>Я</button>
+                    </mat-form-field>
+
+                    <mat-checkbox>Я участник</mat-checkbox>
+                    <mat-checkbox>Строгий поиск</mat-checkbox>
+                    <mat-checkbox>В заголовках</mat-checkbox>
+
+                    <p>Только</p>
+                    <mat-checkbox>Теги</mat-checkbox>
+                    <mat-checkbox>Просьбы</mat-checkbox>
+                    <mat-checkbox>Контакты</mat-checkbox>
+                </div>
+            </div>
+            }
+            <div class="mobile-menu" [class.open]="isMobileMenuOpen" (mouseleave)="toggleMenuBurger(false)">
+                <a mat-button (click)="toggleMenuBurger()">
+                    <mat-icon>link</mat-icon> Ссылки
+                </a>
+                <a mat-button (click)="toggleMenuBurger()">
+                    <mat-icon>person</mat-icon> Контакты
+                </a>
+                <a mat-button (click)="toggleMenuBurger()">
+                    <mat-icon>assistant</mat-icon> Теги
+                </a>
+                <a mat-button (click)="toggleMenuBurger()">
+                    <mat-icon>star_border</mat-icon> Избранное
+                </a>
+                <a mat-button (click)="toggleMenuBurger()">
+                    <mat-icon>history</mat-icon> Поощрения
+                </a>
+            </div>
+
+            <!-- Десктопная навигация -->
+            <div class="header_navigation header_navigation__hide">
+                <a mat-button><mat-icon>link</mat-icon> Ссылки</a>
+                <a mat-button><mat-icon>person</mat-icon> Контакты</a>
+                <a mat-button><mat-icon>assistant</mat-icon>Теги</a>
+                <a mat-button><mat-icon>star_border</mat-icon> Избранное</a>
+                <a mat-button><mat-icon>history</mat-icon> Поощрения</a>
+            </div>
+            @if (isSearchActive) {
+            <div class="header_search">
+                <button mat-icon-button class="header_search_back show-on-mobile" (click)="toggleFilter(false)">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <input class="header_input" placeholder="Поисковый запрос" (blur)="toggleFilter(false)" />
+            </div>
+            }
+            <div class="header_zoom">
+                <button mat-icon-button color="primary" (click)="toggleFilter(true)">
+                    <mat-icon>search</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon>add_circle</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="header_profil">
+            <button mat-icon-button>
+                <mat-icon>notifications</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>person</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-toolbar>
